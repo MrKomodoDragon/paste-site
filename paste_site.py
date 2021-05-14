@@ -29,7 +29,7 @@ async def root():
 
 @app.route('/pastes/<id>')
 async def pastes(id):
-    async with DB_CONNECTION.acquire(reuse=False) as conn:
+    async with DB_CONNECTION.acquire() as conn:
         async with conn.transaction():
             content = await conn.fetchval('SELECT content from pastes where id = $1', id)
     if content is None:
