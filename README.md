@@ -11,4 +11,5 @@ CREATE TABLE pastes(id VARCHAR(255) PRIMARY KEY, content TEXT);
 
 3. make a .env file with your potsgres password as "POSTGRES_PASS"
 4. Run the file
-Run the server with 
+
+Thanks to Tom and Jay for the (soon to be done) frontend.
