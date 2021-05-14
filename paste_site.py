@@ -38,8 +38,7 @@ async def pastes(id):
 
 @app.route('/test')
 async def test():
-    thing = generate_id()
-    return thing
+    return generate_id()
 
 @app.route('/upload', methods=['GET'])
 async def upload():
