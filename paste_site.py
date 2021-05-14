@@ -54,4 +54,4 @@ async def upload():
 
 
 
-app.run()
+app.run(loop=loop)
