@@ -13,7 +13,7 @@ DB_CONNECTION = loop.run_until_complete(
     (asyncpg.create_pool(f'postgres://postgres:{os.getenv("POSTGRES_PASS")}@localhost:5432/pastesite', loop=loop))
 )
 
-
+# the words list was yoinked from the mystbin repo: https://raw.githubusercontent.com/PythonistaGuild/MystBin/dev-staging/mystbin/rest/utils/words.txt
 words = open('words.txt').read().splitlines()
 
 

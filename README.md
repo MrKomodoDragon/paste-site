@@ -6,7 +6,7 @@ A pretty trivial paste site on i’m working on. Don’t expect too much from it
 
 2. Make a postgres database named `pastesite`, and create a table with this code: 
 ```sql
-CREATE TABLE pastes(id VARCHAR(255) PRIMARY KEY NOT NULL, content TEXT);
+CREATE TABLE pastes(id VARCHAR(255) PRIMARY KEY, content TEXT);
 ```
 
 3. make a .env file with your potsgres password as "POSTGRES_PASS"
