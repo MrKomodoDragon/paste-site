@@ -36,10 +36,6 @@ async def pastes(id):
         return ":( A paste with that id does not exist"
     return content
 
-@app.route('/test')
-async def test():
-    thing = generate_id()
-    return thing
 
 @app.route('/upload', methods=['GET'])
 async def upload():
