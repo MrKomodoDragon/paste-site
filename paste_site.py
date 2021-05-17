@@ -37,7 +37,6 @@ async def pastes(id):
     return content
 
 
-
 @app.route('/upload', methods=['GET'])
 async def upload():
     id = generate_id()
