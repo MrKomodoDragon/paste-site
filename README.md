@@ -9,6 +9,11 @@ A pretty trivial paste site on i’m working on. Don’t expect too much from it
 CREATE TABLE pastes(id VARCHAR(255) PRIMARY KEY, content TEXT);
 ```
 
+To further increase query performance we will create an index.
+```sql
+CREATE INDEX paste_id ON pastes(id);
+```
+
 3. make a .env file with your potsgres password as "POSTGRES_PASS"
 4. Run the file
 Run the server with `python3.9`
