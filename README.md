@@ -13,4 +13,4 @@ CREATE TABLE pastes(id VARCHAR(255) PRIMARY KEY, content TEXT);
 4. Run the file.
 
 
-Thanks to Tom and Jay for the (soon to be done) frontend.
+Thanks to Tom, Jay and moonie for the (soon to be done) frontend.
