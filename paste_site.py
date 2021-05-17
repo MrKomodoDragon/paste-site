@@ -1,10 +1,10 @@
-from quart import Quart, request, redirect
+from quart import Quart, request, redirect, render_template
 import asyncpg
 import asyncio
 import random
 from dotenv import load_dotenv
 import os
-app = Quart(__name__)
+app = Quart(__name__, template_folder='templates/')
 load_dotenv()
 
 
@@ -24,7 +24,7 @@ def generate_id() -> str:
 
 @app.route(rule='/')
 async def root():
-    return "Hello. This is my paste site. It's kinda basic."
+    return await render_template('index.html')
 
 
 @app.route('/pastes/<id>')
