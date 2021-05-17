@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        
+
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="{{ url_for('static',filename='css/styles.css') }}">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -42,12 +42,12 @@
         <main>
             <div contenteditable="true">
                 <form method="POST">
-                    <textarea class="form-control" spellcheck="false" placeholder="Enter" autofocus id="mainInput"></textarea>
+                    <textarea spellcheck="false" placeholder="Enter" autofocus id="mainInput"></textarea>
                 </form>
             </div>
         </main>
-        <footer>
-
+        <footer class="card-footer" style="background-color:rgb(44, 41, 41)">
+            
         </footer>
         <script>
             function sendToApi() {
