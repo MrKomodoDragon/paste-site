@@ -5,9 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet"
-            href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <title>KomodoBin</title>
     </head>
     <body>
@@ -16,10 +14,25 @@
                 <div class="navbar-header">
                     <a class="navbar-brand" href="#">KomodoBin</a>
                 </div>
+                <div class="navbar-item" style="padding-top: 9px;">
+                    <button style="border: none; background-color: transparent;" onclick="sendToApi()">
+                        <svg fill="grey" xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 0 24 24" width="30px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm2 16H5V5h11.17L19 7.83V19zm-7-7c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3zM6 6h9v4H6z"/></svg>
+                    </button>
+                </div>
             </nav>
         </header>
-        <textarea class="html" spellcheck="false" placeholder="Enter" autofocus></textarea>
+        <div contenteditable="true">
+            <form method = "POST">
+                <textarea spellcheck="false" placeholder="Enter" autofocus id="mainInput"></textarea>
+            </form>
+        </div>
         
+        <script>
+            function sendToApi() {
+                var userText = document.getElementById("mainInput").value;
+                //komodo do ur js shit here please
+            }
+        </script>
          
     </body>
 </html>
