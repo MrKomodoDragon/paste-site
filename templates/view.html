@@ -1,0 +1,13 @@
+{% extends "base.html" %} 
+{% block title %}KomodoBin - {{ paste_id }}{% endblock %} 
+{% block content %}
+<div contenteditable="false">
+    <textarea 
+        spellcheck="false" 
+        placeholder="Enter"
+        name="content"
+        id="content"
+        autofocus
+    >{{ content }}</textarea>
+</div>
+{% endblock %}
