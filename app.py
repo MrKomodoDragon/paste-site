@@ -40,8 +40,8 @@ async def home():
     return await render_template("index.html")
 
 
-@app.route('/pastes/<paste_id>')
-async def pastes(paste_id):
+@app.route('/pastes/<str:paste_id>')
+async def pastes(paste_id: str):
     async with DB_CONNECTION.acquire() as conn:
         async with conn.transaction():
             content = await conn.fetchval('SELECT content FROM pastes WHERE id = $1', paste_id)
