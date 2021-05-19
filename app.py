@@ -37,10 +37,10 @@ async def home():
                     await conn.execute('INSERT INTO PASTES VALUES($1, $2)', paste_id, content)
             return redirect(url_for("pastes", paste_id=paste_id))
 
-    return await render_template("index.html")
+    return await render_template("index.html", content=request.args.get('edit', ''))
 
 
-@app.route('/pastes/<str:paste_id>')
+@app.route('/pastes/<paste_id>')
 async def pastes(paste_id: str):
     async with DB_CONNECTION.acquire() as conn:
         async with conn.transaction():
@@ -49,6 +49,12 @@ async def pastes(paste_id: str):
         return await render_template("view.html", content=content, paste_id=paste_id)
     else:
         return await render_template("notfound.html")
+
+@app.route('/edit', methods=['POST'])
+async def edit():
+    content = await request.form
+    content = content['content']
+    return redirect(f'../?edit={content}')
 
 
 if __name__ == '__main__':

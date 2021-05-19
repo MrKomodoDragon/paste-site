@@ -2,6 +2,7 @@
 {% block title %}KomodoBin - {{ paste_id }}{% endblock %} 
 {% block content %}
 <div contenteditable="false">
+    <form method="POST" id='edit', action="/edit">
     <textarea 
         spellcheck="false" 
         placeholder="Enter"
@@ -10,5 +11,6 @@
         autofocus
         readonly
     >{{ content }}</textarea>
+    </form>
 </div>
 {% endblock %}
