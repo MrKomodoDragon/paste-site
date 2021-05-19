@@ -44,7 +44,7 @@ async def home():
 async def pastes(paste_id):
     async with DB_CONNECTION.acquire() as conn:
         async with conn.transaction():
-            content = await conn.fetchval('SELECT content FROM pastes WHERE id = $1', id)
+            content = await conn.fetchval('SELECT content FROM pastes WHERE id = $1', paste_id)
     if content:
         return await render_template("view.html", content=content, paste_id=paste_id)
     else:
