@@ -53,7 +53,7 @@ async def pastes(paste_id: str):
 @app.route('/edit', methods=['POST'])
 async def edit():
     content = await request.form
-    content = content['content']
+    content = content.get('content')
     return redirect(f'../?edit={content}')
 
 
