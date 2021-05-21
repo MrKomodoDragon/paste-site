@@ -37,7 +37,7 @@ async def home():
                     await conn.execute('INSERT INTO PASTES VALUES($1, $2)', paste_id, content)
             return redirect(url_for("pastes", paste_id=paste_id))
 
-    return await render_template("index.html", content=request.args.get('edit', ''))
+    return await render_template("index.html")
 
 
 @app.route('/pastes/<paste_id>')
@@ -50,11 +50,6 @@ async def pastes(paste_id: str):
     else:
         return await render_template("notfound.html")
 
-@app.route('/edit', methods=['POST'])
-async def edit():
-    content = await request.form
-    content = content.get('content')
-    return redirect(f'../?edit={content}')
 
 
 if __name__ == '__main__':
