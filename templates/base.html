@@ -7,14 +7,16 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="{{ url_for('static',filename='css/styles.css') }}">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/styles/default.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js"></script>
 
         <title>{% block title %}KomodoBin - Home{% endblock %}</title>
     </head>
     <body>
         <script>// first, find all the div.code blocks
-            //document.querySelectorAll('div.code').forEach(el => {
-                // then highlight each
-                //hljs.highlightElement(el);
+            document.querySelectorAll('div.code').forEach(el => {
+                //then highlight each
+                hljs.highlightElement(el);
             });
         </script>
 

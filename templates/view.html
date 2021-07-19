@@ -1,6 +1,5 @@
 {% extends "base.html" %} 
-<link rel="stylesheet" href="{{ url_for('static',filename='css/default.css') }}">
-<script src="{{ url_for('static',filename='highlight.pack.js') }}"></script>
+
 {% block title %}KomodoBin - {{ paste_id }}{% endblock %}
 {% block new %}
 <button class='btn btn-dark' onclick="location.href = '/'">
@@ -32,17 +31,5 @@
 </button>
 {% endblock %}
 {% block content %}
-<div contenteditable="false" class="code">
-    <form method="POST" id='edit', action="/edit">
-    <textarea 
-        spellcheck="false" 
-        placeholder="Enter"
-        name="content"
-        id="content"
-        autofocus
-        readonly
-    >{{ content }}</textarea>
-    
-    </form>
-</div>
+<pre><code>{{ content }}</code></pre>
 {% endblock %}
